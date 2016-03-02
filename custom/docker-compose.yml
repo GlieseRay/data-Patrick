@@ -1,6 +1,6 @@
 custom-db:
   container_name: custom-db
-  image: nanook/stonemason-droid-base:dev
+  image: nanook/stonemason-droid-base:0.3.0
   entrypoint: /bin/bash
   command: ./docker-init.sh
   environment: &envs
@@ -12,7 +12,7 @@ custom-db:
 
 custom-data:
   container_name: custom-data
-  image: nanook/stonemason-droid-base:dev
+  image: nanook/stonemason-droid-base:0.3.0
   entrypoint: /bin/bash
   command: /tmp/docker-run.sh
   environment:

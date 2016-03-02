@@ -1,7 +1,7 @@
 data-Patrick
 ============
 
-Data Model for maps-Patrick v0.1.0
+Data Model for maps-Patrick v0.1.1
 
 Stonemason Droid Custom Data
 ----------------------------
