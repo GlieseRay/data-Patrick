@@ -1,6 +1,6 @@
 usgs-db:
   container_name: usgs-db
-  image: nanook/stonemason-droid-base:dev
+  image: nanook/stonemason-droid-base:0.3.0
   entrypoint: /bin/bash
   command: ./docker-init.sh
   environment: &envs
@@ -12,7 +12,7 @@ usgs-db:
 
 usgs-data:
   container_name: usgs-data
-  image: nanook/stonemason-droid-base:dev
+  image: nanook/stonemason-droid-base:0.3.0
   entrypoint: /bin/bash
   command: /tmp/docker-run.sh
   environment:
