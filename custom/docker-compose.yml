@@ -1,0 +1,21 @@
+custom-db:
+  container_name: custom-db
+  image: nanook/stonemason-droid-base:dev
+  entrypoint: /bin/bash
+  command: ./docker-init.sh
+  environment: &envs
+    PGHOST: 172.26.183.193
+    PGPORT: 5432
+    PGUSER: postgres
+    PGDATABASE: stonemason_custom
+    PGPASSWORD: 123456
+
+custom-data:
+  container_name: custom-data
+  image: nanook/stonemason-droid-base:dev
+  entrypoint: /bin/bash
+  command: /tmp/docker-run.sh
+  environment:
+    <<: *envs
+  volumes:
+    - ./:/tmp/
