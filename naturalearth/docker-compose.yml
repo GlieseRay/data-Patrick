@@ -1,0 +1,21 @@
+naturalearth-db:
+  container_name: naturalearth-db
+  image: nanook/stonemason-droid-base:dev
+  entrypoint: /bin/bash
+  command: ./docker-init.sh
+  environment: &envs
+    PGHOST: 172.26.183.193
+    PGPORT: 5432
+    PGUSER: postgres
+    PGDATABASE: stonemason_naturalearth
+    PGPASSWORD: 123456
+
+naturalearth-data:
+  container_name: naturalearth-data
+  image: nanook/stonemason-droid-base:dev
+  entrypoint: /bin/bash
+  command: /tmp/docker-run.sh
+  environment:
+    <<: *envs
+  volumes:
+    - ./:/tmp/
