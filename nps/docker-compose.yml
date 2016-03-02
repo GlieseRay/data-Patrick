@@ -1,0 +1,21 @@
+nps-db:
+  container_name: nps-db
+  image: nanook/stonemason-droid-base:dev
+  entrypoint: /bin/bash
+  command: ./docker-init.sh
+  environment: &envs
+    PGHOST: 172.26.183.193
+    PGPORT: 5432
+    PGUSER: postgres
+    PGDATABASE: stonemason_nps
+    PGPASSWORD: 123456
+
+nps-data:
+  container_name: nps-data
+  image: nanook/stonemason-droid-base:dev
+  entrypoint: /bin/bash
+  command: /tmp/docker-run.sh
+  environment:
+    <<: *envs
+  volumes:
+    - ./:/tmp/

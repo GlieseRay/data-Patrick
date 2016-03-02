@@ -1,0 +1,16 @@
+
+.DELETE_ON_ERROR:
+%.done: %.sql init.done
+	$(PSQL) -w -d $$PGDATABASE -f $< > $@;
+
+.DELETE_ON_ERROR:
+init.done: init.sql
+	$(PSQL) -w -d $$PGDATABASE -f $< > $@;
+
+.PHONY: $(THEMES)
+$(THEMES): init.done
+	$(MAKE) install -C $@
+
+.PHONY: install
+install: $(TARGETS) $(THEMES)
+	@echo 'Finish Loading "$(notdir $(CURDIR))" Data';
