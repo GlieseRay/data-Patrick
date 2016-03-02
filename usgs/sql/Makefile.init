@@ -1,0 +1,8 @@
+
+PSQL = /usr/bin/env psql
+
+THEMES = 
+
+SOURCES = $(wildcard *.sql)
+
+TARGETS = $(SOURCES:.sql=.done)

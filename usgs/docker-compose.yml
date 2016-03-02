@@ -1,0 +1,21 @@
+usgs-db:
+  container_name: usgs-db
+  image: nanook/stonemason-droid-base:dev
+  entrypoint: /bin/bash
+  command: ./docker-init.sh
+  environment: &envs
+    PGHOST: 172.26.183.193
+    PGPORT: 5432
+    PGUSER: postgres
+    PGDATABASE: stonemason_usgs
+    PGPASSWORD: 123456
+
+usgs-data:
+  container_name: usgs-data
+  image: nanook/stonemason-droid-base:dev
+  entrypoint: /bin/bash
+  command: /tmp/docker-run.sh
+  environment:
+    <<: *envs
+  volumes:
+    - ./:/tmp/

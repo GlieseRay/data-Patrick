@@ -1,0 +1,385 @@
+{
+  "tables": {
+    "airport": {
+      "fields": [
+        {
+          "key": null,
+          "name": "osm_id",
+          "type": "id"
+        },
+        {
+          "key": null,
+          "name": "class",
+          "type": "mapping_key"
+        },
+        {
+          "key": null,
+          "name": "type",
+          "type": "mapping_value"
+        },
+        {
+          "key": null,
+          "name": "geometry",
+          "type": "geometry"
+        },
+        {
+          "key": "name",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "key": "iata",
+          "name": "iata",
+          "type": "string"
+        },
+        {
+          "icao": "icao",
+          "name": "icao",
+          "type": "string"
+        }
+      ],
+      "mapping": {
+        "aeroway": [
+          "aerodrome",
+          "helipad"
+        ]
+      },
+      "type": "point"
+    },
+    "elevation": {
+      "fields": [
+        {
+          "name": "osm_id",
+          "type": "id"
+        },
+        {
+          "name": "geometry",
+          "type": "geometry"
+        },
+        {
+          "name": "class",
+          "type": "mapping_key"
+        },
+        {
+          "name": "type",
+          "type": "mapping_value"
+        },
+        {
+          "key": "name",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "key": "ele",
+          "name": "ele",
+          "type": "integer"
+        },
+        {
+          "key": "tourism",
+          "name": "tourism",
+          "type": "string"
+        }
+      ],
+      "mapping": {
+        "natural": [
+          "peak",
+          "volcano",
+          "saddle"
+        ]
+      },
+      "type": "point"
+    },
+    "waterbody": {
+      "fields": [
+        {
+          "name": "osm_id",
+          "type": "id"
+        },
+        {
+          "name": "geometry",
+          "type": "geometry"
+        },
+        {
+          "name": "class",
+          "type": "mapping_key"
+        },
+        {
+          "name": "type",
+          "type": "mapping_value"
+        },
+        {
+          "key": "name",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "key": "water",
+          "name": "water",
+          "type": "string"
+        },
+        {
+          "key": "salt",
+          "name": "is_salt",
+          "type": "boolint"
+        },
+        {
+          "name": "area",
+          "type": "pseudoarea"
+        }
+      ],
+      "mapping": {
+        "landuse": [
+          "basin",
+          "reservoir"
+        ],
+        "natural": [
+          "water"
+        ],
+        "waterway": [
+          "riverbank"
+        ]
+      },
+      "type": "polygon"
+    },
+    "waterway": {
+      "fields": [
+        {
+          "name": "osm_id",
+          "type": "id"
+        },
+        {
+          "name": "geometry",
+          "type": "geometry"
+        },
+        {
+          "name": "class",
+          "type": "mapping_key"
+        },
+        {
+          "name": "type",
+          "type": "mapping_value"
+        },
+        {
+          "key": "name",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "key": "intermittent",
+          "name": "is_intermittent",
+          "type": "boolint"
+        },
+        {
+          "key": "salt",
+          "name": "is_salt",
+          "type": "boolint"
+        }
+      ],
+      "mapping": {
+        "waterway": [
+          "river",
+          "canal",
+          "stream"
+        ]
+      },
+      "type": "linestring"
+    },
+    "admin_boundary": {
+      "fields": [
+        {
+          "name": "osm_id",
+          "type": "id"
+        },
+        {
+          "name": "geometry",
+          "type": "geometry"
+        },
+        {
+          "name": "class",
+          "type": "mapping_key"
+        },
+        {
+          "name": "type",
+          "type": "mapping_value"
+        },
+        {
+          "key": "name",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "key": "ref",
+          "name": "ref",
+          "type": "string"
+        },
+        {
+          "key": "admin_level",
+          "name": "admin_level",
+          "type": "integer"
+        }
+      ],
+      "mapping": {
+        "boundary": [
+          "administrative"
+        ]
+      },
+      "type": "polygon"
+    },
+    "place": {
+      "fields": [
+        {
+          "name": "osm_id",
+          "type": "id"
+        },
+        {
+          "name": "geometry",
+          "type": "geometry"
+        },
+        {
+          "name": "class",
+          "type": "mapping_key"
+        },
+        {
+          "name": "type",
+          "type": "mapping_value"
+        },
+        {
+          "key": "name",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "key": "population",
+          "name": "population",
+          "type": "integer"
+        },
+        {
+          "key": "capital",
+          "name": "is_capital",
+          "type": "boolint"
+        }
+      ],
+      "mapping": {
+        "place": [
+          "country",
+          "state",
+          "county",
+          "borough",
+          "parish",
+          "municipality",
+          "city",
+          "town",
+          "village",
+          "hamlet",
+          "suburb",
+          "quarter",
+          "neighbourhood",
+          "locality",
+          "isolated_dwelling",
+          "farm"
+        ]
+      },
+      "type": "point"
+    },
+    "road": {
+      "fields": [
+        {
+          "name": "osm_id",
+          "type": "id"
+        },
+        {
+          "name": "geometry",
+          "type": "geometry"
+        },
+        {
+          "name": "class",
+          "type": "mapping_key"
+        },
+        {
+          "name": "type",
+          "type": "mapping_value"
+        },
+        {
+          "key": "name",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "key": "tunnel",
+          "name": "is_tunnel",
+          "type": "boolint"
+        },
+        {
+          "key": "bridge",
+          "name": "is_bridge",
+          "type": "boolint"
+        },
+        {
+          "key": "toll",
+          "name": "is_toll",
+          "type": "boolint"
+        },
+        {
+          "key": "oneway",
+          "name": "oneway",
+          "type": "direction"
+        },
+        {
+          "key": "ref",
+          "name": "ref",
+          "type": "string"
+        },
+        {
+          "key": "layer",
+          "name": "layer",
+          "type": "integer"
+        }
+      ],
+      "mapping": {
+        "highway": [
+          "motorway",
+          "motorway_link",
+          "trunk",
+          "trunk_link",
+          "primary",
+          "primary_link",
+          "secondary",
+          "secondary_link",
+          "tertiary",
+          "tertiary_link",
+          "residential",
+          "unclassified",
+          "road",
+          "minor",
+          "path",
+          "track",
+          "service",
+          "footway",
+          "bridleway",
+          "cycleway",
+          "steps",
+          "pedestrian",
+          "living_street",
+          "raceway",
+          "proposed",
+          "construction"
+        ],
+        "railway": [
+          "rail",
+          "tram",
+          "light_rail",
+          "subway",
+          "narrow_gauge",
+          "preserved",
+          "funicular",
+          "monorail",
+          "disused"
+        ],
+        "route": [
+          "ferry"
+        ]
+      },
+      "type": "linestring"
+    }
+  }
+}
